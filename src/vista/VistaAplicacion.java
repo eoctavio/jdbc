@@ -9,11 +9,13 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
 
+import controlador.ControladorCargaMenu;
+
 public class VistaAplicacion extends JFrame{
 	
-	private JComboBox secciones;
-	private JComboBox paises;
-	private JTextArea resultado;
+	public JComboBox secciones;
+	public JComboBox paises;
+	public JTextArea resultado;
 	
 public VistaAplicacion() {
 		
@@ -49,6 +51,8 @@ public VistaAplicacion() {
 		JButton botonConsulta = new JButton("Consulta");
 		
 		add(botonConsulta, BorderLayout.SOUTH);
+		
+		addWindowListener(new ControladorCargaMenu(this));
     }
 
 }
